@@ -1,0 +1,20 @@
+{
+    "name": "musical-christmas-tree",
+    "version": "1.0.0",
+    "description": "Interactive Musical Christmas Tree",
+    "main": "server.js",
+    "scripts": {
+    "start": "node server.js",
+    "build": "echo 'Build completed'",
+    "dev": "nodemon server.js"
+    },
+    "dependencies": {
+    "express": "^4.18.2"
+    },
+    "devDependencies": {
+    "nodemon": "^3.0.2"
+    },
+    "engines": {
+    "node": ">=18.0.0"
+    }
+    }

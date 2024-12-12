@@ -1,0 +1,21 @@
+@media (max-width: 768px) {
+    .tree-layer {
+    border-left-width: 100px;
+    border-right-width: 100px;
+    border-bottom-width: 200px;
+    }
+    .controls {
+    top: auto;
+    bottom: 20px;
+    right: 50%;
+    transform: translateX(50%);
+    }
+    .controls button {
+    font-size: 24px;
+    padding: 15px;
+    }
+    .music-player {
+    width: 90%;
+    bottom: 80px;
+    }
+    }

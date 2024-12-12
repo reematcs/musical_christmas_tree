@@ -1,0 +1,126 @@
+/* Center the tree container on the screen */
+.tree-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; /* Doubled size for larger tree */
+    height: 800px;
+    overflow: visible;
+}
+
+/* Tree base styles */
+.tree {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Tree sections with scalable design */
+.tree-section {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: solid transparent;
+    border-right: solid transparent;
+    border-bottom: solid #0f5132; /* Tree green color */
+    filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.3));
+    transition: all 0.5s ease;
+}
+
+/* Top section of the tree */
+.tree-top {
+    top: 0;
+    border-width: 60px 60px 120px;
+}
+
+/* Middle section of the tree */
+.tree-middle {
+    top: 100px;
+    border-width: 80px 80px 160px;
+}
+
+/* Bottom section of the tree */
+.tree-bottom {
+    top: 240px;
+    border-width: 100px 100px 200px;
+}
+
+/* Tree trunk */
+.trunk {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 60px;
+    height: 80px;
+    background: #8B4513; /* Brown color for the trunk */
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Star on top of the tree */
+.star {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%) rotate(15deg);
+    font-size: 40px;
+    color: gold;
+    text-shadow: 0 0 10px rgba(255, 223, 0, 0.8);
+    animation: twinkle 2s infinite alternate;
+}
+
+/* Ornaments */
+.ornament {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red; /* Default ornament color */
+    border-radius: 50%;
+    animation: twinkle 1.5s infinite alternate;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.ornament:hover {
+    transform: scale(1.3);
+}
+
+/* Lights */
+.light {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: yellow; /* Default light color */
+    box-shadow: 0 0 8px rgba(255, 255, 0, 0.8);
+    animation: blink 2s infinite alternate;
+}
+
+/* Snowflakes */
+.snow {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: snowfall linear infinite;
+}
+
+/* Animations */
+@keyframes twinkle {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+
+@keyframes blink {
+    0% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+@keyframes snowfall {
+    0% { transform: translateY(-100vh); }
+    100% { transform: translateY(100vh); }
+}

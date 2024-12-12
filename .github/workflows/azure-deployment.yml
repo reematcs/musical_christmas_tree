@@ -1,0 +1,36 @@
+name: Deploy to Azure
+on:
+    push:
+        branches: [ main ]
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v3
+        - name: Set up Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: '18'
+        - name: Install dependencies
+          run: |
+                npm install
+                git config --global user.email "github-actions[bot]@users.noreply.github.com"
+                git config --global user.name "github-actions[bot]"
+                git add package-lock.json
+                git commit -m "Add package-lock.json" || echo "No changes to commit"
+                git push || echo "No changes to push"
+        - name: Build
+          run: npm run build
+        - name: Login to Azure
+          uses: azure/login@v1
+          with:
+            creds: ${{ secrets.AZURE_CREDENTIALS }}
+        - name: Deploy to Azure Web App
+          uses: azure/webapps-deploy@v2
+          with:
+            app-name: 'christmas-tree-app'
+            slot-name: 'production'
+            package: .
+        - name: Logout from Azure
+          run: |
+            az logout

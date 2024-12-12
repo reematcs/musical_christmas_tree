@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A festive interactive Christmas tree with music,
+snowfall, and lights.">
+<title>Festive Christmas Tree</title>
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/tree.css">
+<link rel="stylesheet" href="styles/ornaments.css">
+<link rel="stylesheet" href="styles/animations.css">
+</head>
+<body>
+<div class="scene">
+<!-- Control Panel -->
+<div class="controls" aria-label="Interactive Controls">
+<button id="musicToggle" aria-label="Toggle Music">🎵</button>
+<button id="snowToggle" aria-label="Toggle Snow">❄️</button>
+<button id="lightsToggle" aria-label="Toggle Lights">💡</button>
+</div>
+<!-- Tree Container -->
+<div class="tree-container">
+<div class="tree" id="tree" aria-label="Christmas Tree">
+<div class="star" aria-hidden="true">⭐</div>
+<div class="tree-top" aria-hidden="true"></div>
+<div class="tree-middle" aria-hidden="true"></div>
+<div class="tree-bottom" aria-hidden="true"></div>
+<div class="trunk" aria-hidden="true"></div>
+<!-- Ornaments -->
+<div class="ornament" data-sound="ornament1"></div>
+<div class="ornament" data-sound="ornament2"></div>
+<!-- Add more ornaments dynamically -->
+</div>
+</div>
+</div>
+<!-- Scripts -->
+<script src="js/snow.js"></script>
+<script src="js/lights.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/tree.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+@keyframes treeRotate {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+    }
+    @keyframes snowfall {
+    0% {
+    transform: translateY(-100%) rotate(0deg);
+    }
+    100% {
+    transform: translateY(1000%) rotate(360deg);
+    }
+    }
+    @keyframes lightTwinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+@keyframes starGlow {
+0%, 100% { filter: drop-shadow(0 0 5px gold); }
+50% { filter: drop-shadow(0 0 20px gold); }
+}
+.tree-light {
+animation: lightTwinkle 2s var(--delay) infinite;
+}
+.snowflake {
+animation: snowfall linear infinite;
+}

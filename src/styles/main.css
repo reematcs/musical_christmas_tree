@@ -1,0 +1,67 @@
+/* General body styling */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0a192f, #1c355e); /* Gradient background for
+    depth */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff; /* Ensure text is visible on dark background */
+    }
+    /* Main scene container */
+    .scene {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    /* Controls panel */
+    .controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column; /* Align buttons vertically */
+    gap: 10px; /* Space between buttons */
+    }
+    /* Control buttons */
+    .controls button {
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2); /* Subtle transparent button background */
+    cursor: pointer;
+    font-size: 24px;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Glow effect for visibility */
+    transition: all 0.3s ease;
+    }
+    /* Hover effect for control buttons */
+    .controls button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1); /* Slight enlargement */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Stronger glow */
+    }
+    /* Responsive design for smaller screens */
+    @media (max-width: 768px) {
+    .controls {
+    flex-direction: row; /* Align buttons horizontally */
+    top: auto;
+    bottom: 20px; /* Move controls to the bottom */
+    right: 50%;
+    transform: translateX(50%);
+    }
+    .controls button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    }
+    }
