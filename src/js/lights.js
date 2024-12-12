@@ -8,21 +8,39 @@ export class LightSystem {
 
     createLights() {
         const colors = ['#ff0000', '#00ff00', '#ffff00', '#0000ff', '#ff00ff'];
-        const lightCount = 30;
+        const lightCount = 50;
 
         for (let i = 0; i < lightCount; i++) {
             const light = document.createElement('div');
             light.className = 'light';
-            light.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
             
-            // Position lights in a spiral pattern
-            const angle = (i / lightCount) * Math.PI * 2 * 3;
-            const radius = 100 - (i / lightCount) * 50;
-            const x = Math.cos(angle) * radius + 150;
-            const y = Math.sin(angle) * radius + 300;
+            // Calculate position to ensure lights stay within triangle
+            const section = i < lightCount/3 ? 'top' : 
+                          i < (2*lightCount)/3 ? 'middle' : 'bottom';
             
-            light.style.left = `${x}px`;
-            light.style.top = `${y}px`;
+            let yPercent, maxWidth;
+            switch(section) {
+                case 'top':
+                    yPercent = Math.random() * 25 + 5; // 5-30%
+                    maxWidth = 30; // narrower at top
+                    break;
+                case 'middle':
+                    yPercent = Math.random() * 25 + 35; // 35-60%
+                    maxWidth = 50; // wider in middle
+                    break;
+                case 'bottom':
+                    yPercent = Math.random() * 25 + 65; // 65-90%
+                    maxWidth = 70; // widest at bottom
+                    break;
+            }
+            
+            // Calculate x position based on y position (triangle shape)
+            const maxX = maxWidth * (1 - yPercent/100); // narrows as y decreases
+            const xPercent = 50 + (Math.random() * 2 - 1) * maxX; // centered around 50%
+            
+            light.style.backgroundColor = colors[i % colors.length];
+            light.style.left = `${xPercent}%`;
+            light.style.top = `${yPercent}%`;
             light.style.animationDelay = `${Math.random() * 2}s`;
             
             this.tree.appendChild(light);

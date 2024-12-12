@@ -4,8 +4,6 @@ export class AudioController {
         this.bgMusicBuffer = null;
         this.audioSource = null;
         this.isPlaying = false;
-        
-        // Load audio file when constructed
         this.loadAudio('/src/assets/sounds/jingle-bells-jingling.mp3');
     }
 
@@ -33,7 +31,6 @@ export class AudioController {
             this.audioSource.stop();
             this.audioSource = null;
             this.isPlaying = false;
-            console.log("Music stopped.");
         } else {
             this.audioSource = this.audioContext.createBufferSource();
             this.audioSource.buffer = this.bgMusicBuffer;
@@ -41,7 +38,6 @@ export class AudioController {
             this.audioSource.connect(this.audioContext.destination);
             this.audioSource.start(0);
             this.isPlaying = true;
-            console.log("Music playing...");
         }
         return this.isPlaying;
     }
