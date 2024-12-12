@@ -1,6 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musical Christmas Tree</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/tree.css">
+    <link rel="stylesheet" href="/styles/ornaments.css">
+    <link rel="stylesheet" href="/styles/animations.css">
+    <link rel="stylesheet" href="/styles/mobile.css">
+    <link rel="stylesheet" href="/styles/snowfall.css">
+</head>
+<body>
+    <!-- Snow Container -->
+    <div class="snow-container"></div>
+
+    <div class="scene">
+        <!-- Tree Container -->
+        <div class="tree-container">
+            <div class="tree rotatable">
+                <div class="star">⭐</div>
+                <div class="tree-section tree-top"></div>
+                <div class="tree-section tree-middle"></div>
+                <div class="tree-section tree-bottom"></div>
+                <div class="trunk"></div>
+                <div class="decorations"></div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="musicToggle">🔇</button>
+            <button id="snowToggle">☁️</button>
+            <button id="lightsToggle">💡</button>
+        </div>
+    </div>
+
+    <!-- Main Script -->
+    <script type="module" src="/js/main.js"></script>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musical Christmas Tree</title>
+    
+    <!-- CSS Files 
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/tree.css">
+    <link rel="stylesheet" href="/styles/ornaments.css">
+    <link rel="stylesheet" href="/styles/animations.css">
+    <link rel="stylesheet" href="/styles/mobile.css">
+</head>
+<body>
+    <div class="scene">
+        <!-- Tree Container 
+        <div class="tree-container">
+            <div class="tree">
+                <div class="star">⭐</div>
+                <div class="tree-section tree-top"></div>
+                <div class="tree-section tree-middle"></div>
+                <div class="tree-section tree-bottom"></div>
+                <div class="trunk"></div>
+                <div class="decorations"></div>
+            </div>
+        </div>
+
+        <!-- Controls 
+        <div class="controls">
+            <button id="musicToggle">🔇</button>
+            <button id="snowToggle">❄️</button>
+            <button id="lightsToggle">💡</button>
+        </div>
+
+        <!-- Snow Container 
+        <div class="snow-container" style="display: none;"></div>
+
+        <!-- Particle Canvas 
+        <canvas id="particle-canvas"></canvas>
+    </div>
+
+    <!-- Main Script -
+    <script type="module" src="/js/main.js"></script>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musical Christmas Tree</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/tree.css">
+</head>
+<body>
+    <div class="scene">
+        <div class="tree-container">
+            <div class="tree">
+                <div class="star">⭐</div>
+                <div class="tree-section tree-top"></div>
+                <div class="tree-section tree-middle"></div>
+                <div class="tree-section tree-bottom"></div>
+                <div class="trunk"></div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="musicToggle">🔇</button>
+            <button id="snowToggle">❄️</button>
+            <button id="lightsToggle">💡</button>
+        </div>
+        <div class="snow-container" style="display: none;"></div>
+        <canvas id="particle-canvas"></canvas>
+    </div>
+    <script type="module" src="/js/main.js"></script>
+</body>
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="A festive interactive Christmas tree with music,
@@ -13,13 +135,11 @@ snowfall, and lights.">
 </head>
 <body>
 <div class="scene">
-<!-- Control Panel -->
 <div class="controls" aria-label="Interactive Controls">
 <button id="musicToggle" aria-label="Toggle Music">🎵</button>
 <button id="snowToggle" aria-label="Toggle Snow">❄️</button>
 <button id="lightsToggle" aria-label="Toggle Lights">💡</button>
 </div>
-<!-- Tree Container -->
 <div class="tree-container">
 <div class="tree" id="tree" aria-label="Christmas Tree">
 <div class="star" aria-hidden="true">⭐</div>
@@ -27,18 +147,15 @@ snowfall, and lights.">
 <div class="tree-middle" aria-hidden="true"></div>
 <div class="tree-bottom" aria-hidden="true"></div>
 <div class="trunk" aria-hidden="true"></div>
-<!-- Ornaments -->
 <div class="ornament" data-sound="ornament1"></div>
 <div class="ornament" data-sound="ornament2"></div>
-<!-- Add more ornaments dynamically -->
 </div>
 </div>
 </div>
-<!-- Scripts -->
 <script src="js/snow.js"></script>
 <script src="js/lights.js"></script>
 <script src="js/audio.js"></script>
 <script src="js/tree.js"></script>
 <script src="js/main.js"></script>
 </body>
-</html>
+</html> -->

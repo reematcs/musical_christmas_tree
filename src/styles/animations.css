@@ -1,4 +1,114 @@
+/* Tree Rotation Animation */
 @keyframes treeRotate {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+/* Snowfall Animation */
+@keyframes snowfall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0.3;
+    }
+}
+
+/* Light Twinkling Animation */
+@keyframes lightTwinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* Star Glowing Animation */
+@keyframes starGlow {
+    0%, 100% { 
+        filter: drop-shadow(0 0 5px gold);
+        transform: translateX(-50%) scale(1);
+    }
+    50% { 
+        filter: drop-shadow(0 0 20px gold);
+        transform: translateX(-50%) scale(1.1);
+    }
+}
+
+/* Ornament Twinkling */
+@keyframes ornamentTwinkle {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+/* Apply animations to elements */
+.star {
+    animation: starGlow 2s infinite alternate;
+}
+
+.light {
+    animation: lightTwinkle 1.5s infinite alternate;
+}
+
+.light:nth-child(2n) {
+    animation-delay: 0.5s;
+}
+
+.light:nth-child(3n) {
+    animation-delay: 1s;
+}
+
+.snowflake {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    animation: snowfall 6s linear infinite;
+    opacity: 0.7;
+}
+
+.ornament {
+    animation: ornamentTwinkle 1.5s infinite alternate;
+}
+
+/* Interactive tree rotation */
+.tree.interactive {
+    animation: treeRotate 10s linear infinite;
+}
+
+.tree.interactive:hover {
+    animation-play-state: paused;
+}
+
+/* Rotatable tree for gesture controls */
+.tree.rotatable {
+    transition: transform 0.2s ease;
+}
+
+/* Snow container styles */
+.snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Different delays for snowflakes */
+.snowflake:nth-child(2n) {
+    animation-duration: 5s;
+}
+
+.snowflake:nth-child(3n) {
+    animation-duration: 7s;
+}
+
+.snowflake:nth-child(4n) {
+    animation-duration: 8s;
+}
+/* @keyframes treeRotate {
     0% { transform: rotateY(0deg); }
     100% { transform: rotateY(360deg); }
     }
@@ -23,4 +133,4 @@ animation: lightTwinkle 2s var(--delay) infinite;
 }
 .snowflake {
 animation: snowfall linear infinite;
-}
+} */
